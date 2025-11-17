@@ -29,13 +29,13 @@ Here you can find all the projects, certifications, and learning materials I’v
 ## 📜 Certifications
 
 - Google IT Support Professional Certificate  
-- Microsoft IT Support Certificate  
+- Microsoft IT Support  Professional Certificate  
 - IBM Data Analyst Professional Certificate  
 - Google Project Management Certificate  
 - Meta Front-End Developer Certificate
 - English for Career Development — University of Pennsylvania
 - Python Programming for Data Science — Miuul
-- YEA EXCLUSIVE & Participation — Go Academy
+- YEA EXCLUSIVE & Participation — Yea Academy
 
 ---
 
