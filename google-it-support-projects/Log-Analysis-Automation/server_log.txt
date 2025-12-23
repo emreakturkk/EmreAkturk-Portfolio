@@ -1,0 +1,7 @@
+Jan 31 00:10:25 ubuntu.local ticky: INFO: Created ticket [#4234] (user1)
+Jan 31 00:11:10 ubuntu.local ticky: ERROR: Connection to DB failed (user2)
+Jan 31 00:12:15 ubuntu.local ticky: ERROR: Timeout while retrieving information (user1)
+Jan 31 00:13:30 ubuntu.local ticky: INFO: Ticket [#4234] closed (user1)
+Jan 31 00:14:12 ubuntu.local ticky: ERROR: Connection to DB failed (user3)
+Jan 31 00:15:20 ubuntu.local ticky: INFO: Changed ticket status to pending (user2)
+Jan 31 00:16:45 ubuntu.local ticky: ERROR: The user does not exist (user4)
