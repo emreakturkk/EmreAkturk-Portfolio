@@ -1,44 +1,45 @@
 # 👋 Hi, I'm Emre Aktürk
 
-Welcome to my professional portfolio!  
-Here you can find all the projects, certifications, and learning materials I’ve completed across IT support, data analysis, project management, and full-stack development.
+### 🚀 Jr. Full Stack Developer & IT Support Specialist
+
+Welcome to my professional portfolio!
+Here you can find practical projects, automation scripts, and web applications I’ve built across IT support, data analysis, and full-stack development.
 
 ---
 
-## 💼 Portfolio Structure
+### 💼 Portfolio Structure
 
-- **Google IT Support Projects** – Hands-on labs and projects from Google IT Support certificate.  
-- **Microsoft IT Support Projects** – Practical tasks from Microsoft IT Support learning path.  
-- **IBM Data Analyst Projects** – Data cleaning, visualization, SQL, Python projects, and capstones.  
-- **Google Project Management** – Project plans, charters, stakeholder analyses, agile documentation.  
-- **Full-Stack Bootcamp Projects** – Web development projects covering frontend & backend.  
-- **Meta Front-End Projects** – React and frontend projects from Meta Front-End Developer program.  
-- **Career English Materials** – Notes, CV drafts, business English exercises, and resources.
+* **[Google IT Support Projects](https://github.com/emreakturk/google-it-support-projects)** – Python automation scripts for log analysis and system troubleshooting.
+* **[Microsoft IT Support Projects](https://github.com/emreakturk/microsoft-it-support-projects)** – PowerShell automation tools for system health reporting and diagnostics.
+* **[IBM Data Analyst Projects](https://github.com/emreakturk/ibm-data-analyst-projects)** – Data cleaning, visualization, SQL, and Python analysis projects.
+* **[Full-Stack Bootcamp Projects](https://github.com/emreakturk/fullstack-bootcamp-projects)** – Interactive web applications using JavaScript DOM manipulation.
+* **[Meta Front-End Projects](https://github.com/emreakturk/meta-frontend-projects)** – Modern UI components built with HTML5, CSS3, and React concepts.
 
 ---
 
-## 🛠 Skills & Tools
+### 🛠 Skills & Tools
 
-- **Programming & Analysis:** Python, SQL, JavaScript, HTML, CSS, React, Node.js  
-- **Data Tools:** IBM Cognos Analytics, Excel, Tableau, Pandas, NumPy  
-- **IT Support & Project Mgmt:** Networking, Troubleshooting, Windows, Agile/Scrum  
-- **Languages:** English (Intermediate B1-B2), Turkish (Native)
-
----
-
-## 📜 Certifications
-
-- Google IT Support Professional Certificate  
-- Microsoft IT Support  Professional Certificate  
-- IBM Data Analyst Professional Certificate  
-- Google Project Management Certificate  
-- Meta Front-End Developer Certificate
-- English for Career Development — University of Pennsylvania
-- Python Programming for Data Science — Miuul
-- YEA EXCLUSIVE & Participation — Yea Academy
+* **Programming & Scripting:** Python, JavaScript, PowerShell, SQL, HTML, CSS, React, Node.js
+* **Data Tools:** IBM Cognos Analytics, Excel, Tableau, Pandas, NumPy
+* **IT Operations:** System Troubleshooting, Network Diagnostics, Windows/Linux Administration
+* **Languages:** English (Intermediate B1-B2), Turkish (Native)
 
 ---
 
-## 📫 Connect with me
+### 📜 Certifications
 
-- [LinkedIn](https://www.linkedin.com/in/emreaktürk)  
+* **Google IT Support Professional Certificate**
+* **Microsoft IT Support Professional Certificate**
+* **IBM Data Analyst Professional Certificate**
+* **Meta Front-End Developer Certificate**
+* **Google Project Management Certificate**
+* **English for Career Development** — University of Pennsylvania
+* **Python Programming for Data Science** — Miuul
+* **YEA EXCLUSIVE & Participation** — Yea Academy
+
+---
+
+### 📫 Connect with me
+
+* [LinkedIn](https://www.linkedin.com/in/emreakturk/)
+* [GitHub Portfolio](https://github.com/emreakturkk)
