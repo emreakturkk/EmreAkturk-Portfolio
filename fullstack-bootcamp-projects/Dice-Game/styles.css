@@ -1,0 +1,87 @@
+.container {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+  margin: 20px;
+}
+
+body {
+  background-color: #393E46;
+}
+
+h1 {
+  margin: 30px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 5rem; /* Mobilde taşmasın diye biraz küçülttüm */
+  color: #4ECCA3;
+}
+
+p {
+  font-size: 2rem;
+  color: #4ECCA3;
+  font-family: 'Indie Flower', cursive;
+}
+
+img {
+  width: 80%;
+  border-radius: 20px; /* Zarları biraz yumuşattık */
+}
+
+/* --- YENİ EKLENEN CSS --- */
+
+/* Buton Tasarımı */
+.btn {
+  background-color: #4ECCA3;
+  font-family: 'Indie Flower', cursive;
+  border-radius: 10px;
+  color: #232931;
+  font-size: 1.5rem;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.2s;
+  box-shadow: 0px 5px 0px #2c7a60;
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0px 1px 0px #2c7a60;
+}
+
+.btn:hover {
+  background-color: #45b38f;
+}
+
+/* Sallanma Animasyonu (Shake) */
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+footer {
+  margin-top: 5%;
+  color: #EEEEEE;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
