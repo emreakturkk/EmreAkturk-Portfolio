@@ -2,10 +2,10 @@
 
 ### 💻 Jr. Front-End Developer & IT Support Specialist
 
-   Welcome to my professional portfolio!
-   Here you can find **modern web applications**, **automation scripts**, and **practical projects** I’ve built across **Front-End Development**, **IT Support**, and **Data Analysis**.
+Welcome to my professional portfolio!
+Here you can find **modern web applications**, **automation scripts**, and **practical projects** I’ve built across **Front-End Development**, **IT Support**, and **Data Analysis**.
 
-   **My goal is to leverage my dual skill set:** building responsive user interfaces while maintaining robust system infrastructures.
+**My goal is to leverage my dual skill set:** building responsive user interfaces while maintaining robust system infrastructures.
 
 **🚀 Open to opportunities in:**
 * **Front-End Development** (React, JavaScript)
