@@ -1,38 +1,410 @@
-.App {
-  text-align: center;
+/* 1. CSS RESET & DEĞİŞKENLER */
+:root {
+  /* Renkler (Figma'dan) */
+  --primary-green: #495E57;
+  --primary-yellow: #F4CE14;
+  --secondary-orange: #EE9972;
+  --secondary-peach: #FBDABB;
+  --highlight-grey: #EDEFEE;
+  --dark-grey: #333333;
+  
+  /* Fontlar */
+  --font-display: 'Markazi Text', serif;
+  --font-body: 'Karla', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box; /* Kutuların taşmasını engeller */
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: var(--font-body);
+  color: var(--dark-grey);
+  line-height: 1.5;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 2. GENEL LAYOUT (GRID SİSTEMİ) */
+/* Bu sınıfı tüm ana bölümlere vereceğiz */
+.container {
+  max-width: 1024px; /* Figma'daki genişlik sınırımız */
+  margin: 0 auto;    /* Ortalamak için */
+  padding: 0 20px;   /* Mobilde kenarlara yapışmasın */
+}
+
+/* Izgara Düzeni (Responsive) */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 Sütunlu yapı */
+  gap: 20px;
+}
+
+/* 3. NAVİGASYON STİLLERİ (FLEXBOX) */
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Logo sola, linkler sağa */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul {
+  display: flex; /* Linkleri yan yana diz */
+  gap: 20px;
+  list-style: none; /* Noktaları kaldır */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary-green);
+}
+
+/* 4. BUTTON STİLLERİ (Ortak) */
+button, .button-primary {
+  background-color: var(--primary-yellow);
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #e0bd0d;
+}
+
+/* --- HERO BÖLÜMÜ (Yeşil Alan) --- */
+.hero-section {
+    background-color: var(--primary-green); /* O meşhur yeşil */
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+/* İçerik Kutusu (Yazı ve Resim Yan Yana) */
+.hero-container {
+    display: flex; /* Yan yana dizmek için Flexbox */
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Yazı Alanı */
+.hero-text {
+    flex: 1; /* Mevcut alanın yarısını kaplasın */
+    color: #fff; /* Yazılar beyaz */
+}
+
+.hero-text h1 {
+    font-family: var(--font-display); /* Markazi Text */
+    color: var(--primary-yellow); /* Başlık Sarı */
+    font-size: 56px;
+    margin-bottom: -10px; /* Alt başlıkla arasını kapat */
+}
+
+.hero-text h2 {
+    font-family: var(--font-display);
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-family: var(--font-body); /* Karla */
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    max-width: 400px; /* Yazı çok uzamasın */
+}
+
+/* Resim Alanı */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Resmi sağa yasla */
+}
+
+.hero-image img {
+    width: 300px;       /* Genişlik */
+    height: 350px;      /* Yükseklik */
+    object-fit: cover;  /* Resmi kutuya sığdır (bozmadan) */
+    border-radius: 16px; /* Köşeleri yuvarla */
+    margin-top: 20px;   /* Biraz aşağı it (Tasarım hilesi) */
+}
+
+/* MOBİL UYUM (Responsive) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Mobilde alt alta olsun */
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: 0 auto 20px auto; /* Yazıyı ortala */
+    }
+
+    .hero-image img {
+        margin-top: 20px;
+        width: 100%; /* Resim mobilde tam genişlik olsun */
+        max-width: 300px;
+    }
+}
+
+/* --- SPECIALS BÖLÜMÜ --- */
+.specials {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Başlık ve Butonun olduğu satır */
+.specials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.specials-header h1 {
+    font-family: var(--font-display);
+    font-size: 40px;
+}
+
+/* --- KARTLAR (GRID SİSTEMİ) --- */
+.cards-grid {
+    display: grid;
+    /* Ekran sığdığı kadar 300px'lik kolonlar oluştur (Responsive) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+}
+
+/* Kartın Kendisi */
+.card {
+    background-color: var(--highlight-grey); /* Açık gri zemin */
+    border-radius: 16px 16px 0 0; /* Sadece üst köşeleri yuvarla */
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Üzerine gelince azıcık zıplasın */
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Resmi kutuya sığdır */
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 300px; /* İçerik boyunu sabitleyelim ki hizalı olsunlar */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card-header .price {
+    color: var(--secondary-orange);
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--primary-green);
+    font-size: 16px;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Butonu en alta itmek için */
+}
+
+.delivery-btn {
+    text-decoration: none;
+    font-weight: 700;
+    color: #333;
+    display: inline-block;
+}
+
+/* --- FOOTER BÖLÜMÜ --- */
+footer {
+    background-color: var(--primary-green); /* Koyu Yeşil Zemin */
+    color: #fff; /* Beyaz Yazı */
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: grid;
+    /* 4 Eşit Kolon (Responsive: Mobilde tek kolon, masaüstünde 4) */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3 {
+    color: var(--primary-yellow); /* Başlıklar Sarı */
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-yellow);
+}
+/* Footer Logosunu Güzelleştirme */
+.footer-logo {
+    width: 120px; /* Boyutunu ayarla */
+    background-color: #fff; /* Arkasına beyaz fon at */
+    padding: 10px; /* Kenarlardan boşluk bırak */
+    border-radius: 8px; /* Köşeleri yuvarla */
+    display: block;
+}
+
+/* --- TESTIMONIALS (Yorumlar) --- */
+.testimonials {
+    background-color: var(--primary-green); /* Arka plan Yeşil */
+    padding: 60px 0;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.testimonials-title {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: var(--primary-yellow);
+}
+
+.testimonials-grid {
+    display: grid;
+    /* 4 Yorum Kartı yan yana */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.reviewer img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Yuvarlak resim */
+    object-fit: cover;
+}
+
+/* --- ABOUT (Hakkımızda) --- */
+.about {
+    padding: 60px 0;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    font-family: var(--font-display);
+    font-size: 50px;
+    color: var(--primary-yellow);
+    margin-bottom: -10px;
+}
+
+.about-text h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+    position: relative; /* Üst üste resimler için */
+    height: 300px; /* Alan ayır */
+}
+
+/* Resimlerin üst üste binmesi efekti */
+.about-image img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    position: absolute;
+}
+
+.about-image .image-1 {
+    right: 0;
+    bottom: 0;
+    z-index: 2; /* Üstte kalsın */
+}
+
+.about-image .image-2 {
+    right: 100px;
+    top: -40px;
+    z-index: 1; /* Altta kalsın */
+}
+
+/* MOBİL AYARLARI */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        display: none; /* Mobilde resimleri gizleyebiliriz çok yer kaplamasın diye */
+    }
 }

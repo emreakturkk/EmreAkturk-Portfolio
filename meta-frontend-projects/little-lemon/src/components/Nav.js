@@ -1,9 +1,10 @@
-import logo from '../Logo.svg'; // Logonun adı neyse onu yaz (logo.png vb.)
+import logo from '../logo.svg'; 
 
 function Nav() {
     return (
-        <nav>
-            <img src={logo} alt="Little Lemon Logo" />
+        // .container sınıfını ekliyoruz ki ortalansın
+        <nav className="container"> 
+            <img src={logo} alt="Little Lemon Logo" style={{height: "50px"}} /> {/* Logo boyutu ayarı */}
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
