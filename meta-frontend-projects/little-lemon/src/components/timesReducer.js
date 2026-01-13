@@ -1,5 +1,12 @@
 // src/components/timesReducer.js
 
+
+/**
+ * Reducer Functions
+ * initializeTimes: Fetches the initial available times for today's date.
+ * updateTimes: Updates the available times based on the selected date.
+ */
+
 // 1. Başlangıç saatlerini bugünün tarihine göre API'den çekiyoruz
 export const initializeTimes = () => {
     // Bugünün tarihini al

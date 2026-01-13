@@ -5,6 +5,12 @@ import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
 import { initializeTimes, updateTimes } from './timesReducer';
 
+
+/**
+ * Main Component
+ * Handles the main state of the application including available times and booking data.
+ * It also manages the routing for the application.
+ */
 function Main() {
     const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
     

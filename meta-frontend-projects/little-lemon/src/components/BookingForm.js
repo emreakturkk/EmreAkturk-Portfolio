@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 
+
+/**
+ * BookingForm Component
+ * Renders the reservation form with controlled inputs.
+ * Handles client-side validation and submits data to the Main component.
+ */
+
 function BookingForm(props) {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
