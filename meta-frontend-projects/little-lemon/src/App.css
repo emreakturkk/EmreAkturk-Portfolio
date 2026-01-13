@@ -487,3 +487,22 @@ form input[type="submit"]:disabled {
 .booking-table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+/* --- FORM VALIDATION (UX) --- */
+
+/* Geçersiz veri girilmişse (örn: geçmiş tarih veya boş) */
+form input:invalid, form select:invalid {
+    border: 2px solid #ff6b6b; /* Kırmızı çerçeve */
+}
+
+/* Geçerli veri girilmişse */
+form input:valid, form select:valid {
+    border: 2px solid #495e57; /* Little Lemon Yeşili çerçeve */
+}
+
+/* Zorunlu alanların yanına küçük bir yıldız koyalım */
+form label::after {
+    content: " *";
+    color: red;
+    font-size: 0.8rem;
+    /* Occasion zorunlu değil, o yüzden onu hariç tutalım (JavaScript ile yapmak daha doğru ama CSS ile böyle idare ederiz şimdilik) */
+}

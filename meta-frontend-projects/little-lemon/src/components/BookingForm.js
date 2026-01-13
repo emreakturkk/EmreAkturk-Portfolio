@@ -1,65 +1,68 @@
 import React, { useState } from 'react';
 
-// Props olarak availableTimes ve dispatch alıyoruz
 function BookingForm(props) {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("");
 
-    // --- ESKİ availableTimes useState'ini SİLDİK --- 
-    // Artık props.availableTimes kullanacağız.
-
-    // Tarih değiştiğinde çalışacak fonksiyon
-    const handleDateChange = (e) => {
-        const selectedDate = e.target.value;
-        setDate(selectedDate);
-        
-        // Babaya (Main.js) haber veriyoruz: "Tarih değişti, saatleri güncelle!"
-        props.dispatch({ type: 'UPDATE_TIMES', payload: selectedDate });
-    };
-
-// ... Diğer kodlar aynı ...
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        // Form verilerini bir objede topla
         const formData = {
             date,
             time,
             guests,
             occasion
         };
-
-        // Main.js'den gelen fonksiyonu çalıştır!
         props.submitForm(formData);
     }
 
-    // ... Return kısmı aynı ...
+    // Geçmiş tarih seçilmesini engellemek için yardımcı fonksiyon
+    const getCurrentDate = () => {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        return `${yyyy}-${mm}-${dd}`;
+    };
+
+    // ADIM 2: React Doğrulaması
+    // Formun geçerli olup olmadığını kontrol eden değişken
+    // Tarih var mı? Saat seçildi mi? Misafir sayısı 1'den büyük mü?
+    const isFormValid = date !== "" && time !== "" && guests >= 1 && guests <= 10;
 
     return (
-        <form onSubmit={handleSubmit} style={{display: 'grid', maxWidth: '200px', gap: '20px', margin: '0 auto'}}>
+        <form onSubmit={handleSubmit} style={{display: 'grid', maxWidth: '200px', gap: '20px', margin: '0 auto'}} aria-label="Reservation Form">
             
+            {/* Tarih */}
             <label htmlFor="res-date">Choose date</label>
             <input 
                 type="date" 
                 id="res-date" 
                 value={date} 
-                // Tarih değişince özel fonksiyonumuzu çağırıyoruz
-                onChange={handleDateChange} 
-                required
+                onChange={(e) => {
+                    setDate(e.target.value);
+                    props.dispatch({ type: 'UPDATE_TIMES', payload: e.target.value });
+                }} 
+                /* ADIM 1: HTML5 Doğrulaması */
+                required 
+                min={getCurrentDate()} 
+                aria-label="Choose date"
+                aria-required="true"
             />
 
+            {/* Saat */}
             <label htmlFor="res-time">Choose time</label>
             <select 
                 id="res-time" 
                 value={time} 
                 onChange={(e) => setTime(e.target.value)} 
+                /* ADIM 1: HTML5 Doğrulaması */
                 required
+                aria-label="Choose time"
+                aria-required="true"
             >
                 <option value="">Select a time</option>
-                {/* Saatleri artık PROPS'tan alıyoruz */}
                 {props.availableTimes.map((availableTime) => (
                     <option key={availableTime} value={availableTime}>
                         {availableTime}
@@ -67,23 +70,29 @@ function BookingForm(props) {
                 ))}
             </select>
 
+            {/* Kişi Sayısı */}
             <label htmlFor="guests">Number of guests</label>
             <input 
                 type="number" 
                 placeholder="1" 
-                min="1" 
-                max="10" 
                 id="guests" 
                 value={guests} 
                 onChange={(e) => setGuests(e.target.value)} 
+                /* ADIM 1: HTML5 Doğrulaması */
                 required
+                min="1" 
+                max="10" 
+                aria-label="Number of guests"
+                aria-required="true"
             />
 
+            {/* Özel Gün */}
             <label htmlFor="occasion">Occasion</label>
             <select 
                 id="occasion" 
                 value={occasion} 
                 onChange={(e) => setOccasion(e.target.value)}
+                aria-label="Occasion"
             >
                 <option value="">Select an occasion</option>
                 <option value="Birthday">Birthday</option>
@@ -91,7 +100,14 @@ function BookingForm(props) {
                 <option value="Engagement">Engagement</option>
             </select>
 
-            <input type="submit" value="Make Your reservation" disabled={!date || !time || !guests} />
+            {/* ADIM 2: React ile Buton Kilitleme */}
+            {/* isFormValid false ise buton sönük (disabled) kalacak */}
+            <input 
+                type="submit" 
+                value="Make Your reservation" 
+                disabled={!isFormValid} 
+                aria-label="On Click"
+            />
         </form>
     );
 }
